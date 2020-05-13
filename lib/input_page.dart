@@ -88,14 +88,14 @@ class _InputPageState extends State<InputPage> {
                           ),
                           SliderTheme(
                             data: SliderTheme.of(context).copyWith(
-                              activeTrackColor: Colors.white,
-                              thumbShape:
-                                  RoundSliderThumbShape(enabledThumbRadius: 15),
-                              overlayShape:
-                                  RoundSliderOverlayShape(overlayRadius: 30),
-                              thumbColor: kBottomContainerColor,
-                              overlayColor: Color(0x29EB1555),
-                            ),
+                                activeTrackColor: Colors.white,
+                                thumbShape: RoundSliderThumbShape(
+                                    enabledThumbRadius: 15),
+                                overlayShape:
+                                    RoundSliderOverlayShape(overlayRadius: 30),
+                                thumbColor: kBottomContainerColor,
+                                overlayColor: Color(0x29EB1555),
+                                inactiveTrackColor: Color.grey[700]),
                             child: Slider(
                               value: height.toDouble(),
                               min: kMinHeight,
@@ -105,7 +105,6 @@ class _InputPageState extends State<InputPage> {
                                   height = val.toInt();
                                 });
                               },
-                              inactiveColor: Colors.grey[700],
                             ),
                           )
                         ]),
