@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class BottomClickArea extends StatelessWidget {
-  const BottomClickArea({
-    Key key,
-  }) : super(key: key);
+  BottomClickArea({@required this.clickText, @required this.onTap});
+
+  final String clickText;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => ResultsPage()));
-        },
+        onTap: onTap,
         child: Container(
           color: kBottomContainerColor,
           margin: EdgeInsets.only(top: 10.0),
@@ -22,7 +20,7 @@ class BottomClickArea extends StatelessWidget {
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('CALCULATE', style: kLargeButtonTextStyle),
+                Text(clickText, style: kLargeButtonTextStyle),
               ]),
         ));
   }
