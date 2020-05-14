@@ -3,6 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon.dart';
 import 'constants.dart';
+import 'round_icon_button.dart';
+import 'results_page.dart';
+import 'bottom_click_area.dart';
 
 enum Gender { male, female }
 
@@ -187,33 +190,9 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
-          )
+          BottomClickArea()
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPress});
-
-  final IconData icon;
-  final Function onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: onPress,
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4c4f5e),
-      constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
-      elevation: 6.0,
-      child: Icon(icon),
     );
   }
 }
